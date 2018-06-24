@@ -16,9 +16,8 @@ def get_next_page(url):
         doc = pq(url)
         url = base_url + doc('.pager .next a').attr('href')
         urls.append(url)
-        if url:
-            get_next_page(url)
-            return url
+        get_next_page(url)
+        return 
     except Exception:
         return
 
